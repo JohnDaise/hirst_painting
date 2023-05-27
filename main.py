@@ -28,6 +28,7 @@ tim.penup()
 tim.setposition(-250, -250)
 
 
+# creates single row of spots
 def draw_spot_row(spots):
     for i in range(spots - 1):
         spot_color = random.choice(color_list)
