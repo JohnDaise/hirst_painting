@@ -22,17 +22,23 @@ colormode(255)
 tim = Turtle()
 tim.shape("turtle")
 tim.color("bisque")
+tim.penup()
+tim.setposition(-300, -300)
 
 
 def draw_spot():
     spot_color = random.choice(color_list)
+    tim.pendown()
     tim.pencolor(spot_color)
     tim.dot(20)
     tim.penup()
     tim.forward(50)
 
 
-draw_spot()
+for i in range(10):
+    draw_spot()
+
 
 screen = Screen()
+# screen.setup(1, 1, -1, -1)
 screen.exitonclick()
