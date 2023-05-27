@@ -17,7 +17,6 @@ color_list = [(54, 108, 149), (225, 201, 108), (134, 85, 58), (224, 141, 62), (1
 
 colormode(255)
 
-
 # Initialize Turtle
 tim = Turtle()
 tim.shape("turtle")
@@ -26,19 +25,29 @@ tim.penup()
 tim.setposition(-300, -300)
 
 
-def draw_spot():
-    spot_color = random.choice(color_list)
-    tim.pendown()
-    tim.pencolor(spot_color)
+def draw_spot_row(spots):
+    for i in range(spots - 1):
+        spot_color = random.choice(color_list)
+        tim.pendown()
+        tim.pencolor(spot_color)
+        tim.dot(20)
+        tim.penup()
+        tim.forward(50)
     tim.dot(20)
-    tim.penup()
+
+
+num_spots = 10
+left_right = 180
+
+for _ in range(num_spots):
+    draw_spot_row(num_spots)
+    tim.setheading(90)
     tim.forward(50)
-
-
-for i in range(10):
-    draw_spot()
-
+    tim.setheading(left_right)
+    if left_right == 180:
+        left_right = 0
+    else:
+        left_right = 180
 
 screen = Screen()
-# screen.setup(1, 1, -1, -1)
 screen.exitonclick()
