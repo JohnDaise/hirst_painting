@@ -22,8 +22,9 @@ num_spots = 10
 
 # Initialize Turtle
 tim = Turtle()
-tim.shape("turtle")
-tim.color("bisque")
+tim.hideturtle()
+# tim.shape("turtle")
+# tim.color("bisque")
 tim.penup()
 tim.setposition(-250, -250)
 
