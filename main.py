@@ -17,12 +17,15 @@ color_list = [(54, 108, 149), (225, 201, 108), (134, 85, 58), (224, 141, 62), (1
 
 colormode(255)
 
+# Initialize number of spots
+num_spots = 10
+
 # Initialize Turtle
 tim = Turtle()
 tim.shape("turtle")
 tim.color("bisque")
 tim.penup()
-tim.setposition(-300, -300)
+tim.setposition(-250, -250)
 
 
 def draw_spot_row(spots):
@@ -36,18 +39,19 @@ def draw_spot_row(spots):
     tim.dot(20)
 
 
-num_spots = 10
-left_right = 180
+# setup for swapping values
+a = 180
+b = 0
+left_right = a
+total = a + b
 
+# loop to create multiple rows
 for _ in range(num_spots):
     draw_spot_row(num_spots)
     tim.setheading(90)
     tim.forward(50)
     tim.setheading(left_right)
-    if left_right == 180:
-        left_right = 0
-    else:
-        left_right = 180
+    left_right = total - left_right  # swaps value
 
 screen = Screen()
 screen.exitonclick()
