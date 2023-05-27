@@ -14,6 +14,10 @@ tim = Turtle()
 tim.shape("turtle")
 tim.color("bisque")
 
+tim.dot(20, "blue")
+tim.penup()
+tim.forward(50)
+
 
 screen = Screen()
 screen.exitonclick()
